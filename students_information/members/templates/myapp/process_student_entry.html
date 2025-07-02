@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Process Student Data</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/process_student_entry.css' %}">
+</head>
+
+<body>
+<h1>Details of {{ name }} inserted Successfully</h1>        <!--get the name from context in views.py file-->
+{% if gender|lower == "female" %}
+    <img src="{% static '/css/img/girl_avatar.jpg' %}" alt="{{ gender }}">
+{% else %}
+    <img src="{% static '/css/img/male_avatar.jpg' %}" alt="{{ gender }}">
+{% endif %}
+
+<div id="output">Loading...</div>
+{% load static %}
+<script src="{% static 'js/fetch_stud_data.js' %}"></script>           <!--used to load the js file & we want to add static in settings.py-->
+</body>
+</html>
